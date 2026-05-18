@@ -1,0 +1,67 @@
+<script>
+
+// Equipe: [NOMES E MATRICULA]
+
+
+
+
+    var alunos = Number(prompt('Digite a quantidade de alunos'));
+
+    var av1 = [];
+    var av2 = [];
+    var media = [];
+
+    
+    var aprovados = 0;
+    var reprovados = 0;
+
+    for (var i = 0; i < alunos; i++) {
+
+
+        av1[i] = Number(prompt('Digite a nota do 1 aluno' + (i + 1)));
+        av2[i] = Number(prompt('Digite a nota do 2 aluno' + (i + 1)));
+
+
+        media[i] = (av1[i] + av2[i]) / 2;
+
+
+        if (media[i] > 5) {
+            aprovados++;
+        } else {
+            reprovados++;
+        }
+
+    }
+
+
+    for (var i = 0; i < media.length; i++) {
+
+        for (var j = 0; j < media.length - 1; j++) {
+
+            if (media[j] > media[j + 1]) {
+
+                var aux = media[j];
+                media[j] = media[j + 1];
+                media[j + 1] = aux;
+
+        }
+
+    }
+
+}
+
+
+    document.write("Médias em ordem crescente <br><br>");
+
+    for (var i = 0; i < media.length; i++) {
+
+        document.write(media[i] + "<br>");
+
+}
+
+document.write("<br>");
+document.write("Aprovados: " + aprovados + "<br>");
+document.write("Reprovados: " + reprovados);
+
+
+</script>
